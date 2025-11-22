@@ -1,5 +1,4 @@
 import Acargar_y_limpiar_csv
-import os
 
 def generar_señales(datos):
     senales = []
@@ -22,10 +21,3 @@ def generar_señales(datos):
             senales.append("nada")
 
     return senales
-
-BASE = os.path.dirname(__file__)
-datos = Acargar_y_limpiar_csv.cargar_y_limpiar_csv(os.path.join(BASE,"precios.csv"))
-senales = generar_señales(datos)
-print(senales)
-
-print(os.path.abspath("precios.csv"))
