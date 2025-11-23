@@ -24,20 +24,22 @@ class CuentaDeTrading:
         fecha: datetime,
         instrumento: str,
         tipo: str,  # ej. "compra" / "venta"
-        tamaño: float,
+        tamano: float,
         precio_entrada: float,
         precio_salida: float,
         resultado: float,
+        fecha_cierre: datetime | None = None,
     ) -> None:
         operacion = {
             "fecha": fecha,
             "instrumento": instrumento,
             "tipo": tipo,
-            "tamaño": tamaño,
+            "tamano": tamano,
             "precio_entrada": precio_entrada,
             "precio_salida": precio_salida,
             "resultado": resultado,
         }
+        if fecha_cierre is not None:
+            operacion["fecha_cierre"] = fecha_cierre
         self.historial_operaciones.append(operacion)
         self.saldo += resultado  # asumiendo que resultado ya incluye P&L neto
-
