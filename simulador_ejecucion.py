@@ -1,5 +1,5 @@
-﻿import Acargar_y_limpiar_csv
-import Bgenerar_senales
+﻿import mini_trading_simulator.Cargar_y_limpiar_csv as Cargar_y_limpiar_csv
+import mini_trading_simulator.Generar_senales as Generar_senales
 from Ccuenta_de_trading import CuentaDeTrading
 
 
@@ -18,11 +18,11 @@ def ejecutar_trading(ruta_csv: str, saldo_inicial: float = 0.0, max_operaciones:
 
     TAMANO_OPERACION = 1.0
 
-    datos = Acargar_y_limpiar_csv.cargar_y_limpiar_csv(ruta_csv)
+    datos = Cargar_y_limpiar_csv.cargar_y_limpiar_csv(ruta_csv)
     if not datos:
         raise ValueError("No se encontraron filas validas en el CSV.")
 
-    senales = Bgenerar_senales.generar_senales(datos)
+    senales = Generar_senales.generar_senales(datos)
     cuenta = CuentaDeTrading(saldo=saldo_inicial)
 
     posicion_abierta = None  # {'tipo': 'compra'/'venta', 'entrada': float, 'fecha': datetime, 'activo': str}

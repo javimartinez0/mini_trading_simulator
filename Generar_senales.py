@@ -1,4 +1,4 @@
-import Acargar_y_limpiar_csv
+import mini_trading_simulator.Cargar_y_limpiar_csv as Cargar_y_limpiar_csv
 
 def generar_senales(datos):
     senales = []
