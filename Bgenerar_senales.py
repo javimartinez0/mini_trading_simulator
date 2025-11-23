@@ -1,6 +1,6 @@
 import Acargar_y_limpiar_csv
 
-def generar_señales(datos):
+def generar_senales(datos):
     senales = []
 
     for i, fila in enumerate(datos):
