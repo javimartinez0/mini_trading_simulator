@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-trading-simulator"
+version = "0.1.0"
+description = "A learning-focused trading algorithm simulator that records operations and updates a fictional account."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["trading", "backtest", "simulation", "learning", "python"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Education",
+  "Topic :: Software Development :: Learning",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6", "pytest>=8"]
+
+[project.scripts]
+mini-trading-simulator = "mini_trading_simulator.resumen_final:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mini_trading_simulator*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
